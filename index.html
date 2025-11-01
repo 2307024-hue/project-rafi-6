@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="assets/js/script.js"></script>
+  <script>
+    function ubahWarna() {
+      document.body.style.backgroundColor = "lightblue";
+    }
+
+    function tampilkanGanjil() {
+      let hasil = "";
+      for (let i = 1; i <= 20; i++) {
+        if (i % 2 !== 0) hasil += i + " ";
+      }
+      document.getElementById("output").innerText = hasil;
+    }
+
+    function hitung() {
+      let sisi = document.getElementById("sisi").value;
+      let luas = sisi * sisi;
+      document.getElementById("hasil").innerHTML = "Luas Persegi: " + luas;
+    }
+
+    function hitungsegitiga() {
+      let alas = document.getElementById("alas").value;
+      let tinggi = document.getElementById("tinggi").value;
+      let luassegitiga = 0.5 * alas * tinggi;
+      document.getElementById("hasilsegitiga").innerHTML = "Luas Segitiga: " + luassegitiga;
+    }
+
+    window.onload = function () {
+      alert("Selamat datang di JavaScript!");
+      let nilai = prompt("Masukkan nilai Anda:");
+      if (nilai >= 90) {
+        alert("Nilai Anda A");
+      } else if (nilai >= 75) {
+        alert("Nilai Anda B");
+      } else {
+        alert("Nilai Anda C");
+      }
+
+      for (let i = 1; i <= 3; i++) {
+        console.log("Belajar JavaScript Di Praktikum Web-" + i);
+      }
+
+      tampilkanGanjil();
+    };
+  </script>
+</head>
+<body>
+  <h2>Bilangan Ganjil dari 1 sampai 20</h2>
+  <p id="output"></p>
+
+  <h3>Hitung Luas Persegi</h3>
+  <input type="number" id="sisi" placeholder="Masukkan sisi">
+  <button onclick="hitung()">Hitung</button>
+  <p id="hasil"></p>
+
+  <h3>Hitung Luas Segitiga</h3>
+  <input type="number" id="alas" placeholder="Masukkan alas">
+  <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+  <button onclick="hitungsegitiga()">Hitung</button>
+  <p id="hasilsegitiga"></p>
+
+  <h2>Program Luas Segitiga</h2>
+  <button onclick="hitungLuasSegitiga()">Hitung Luas Segitiga</button>
+  <p id="hasilSegitiga"></p>
+
+  <h2>Bilangan Ganjil</h2>
+  <button onclick="tampilkanBilanganGanjil()">Tampilkan Bilangan Ganjil</button>
+
+  <h2>Ubah Warna Background</h2>
+  <button onclick="ubahWarnaBackground()">Ubah Warna Background</button>
+</body>
+</html>
